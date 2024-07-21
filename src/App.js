@@ -6,7 +6,22 @@ import AddItem from './AddItem';
 import SearchItem from './SearchItem';
 
 function App() {
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useState(
+  [
+    {
+      id : 1,
+      checked : true,
+      item : 'play badminton'
+    },{
+      id : 2,
+      checked : false,
+      item : 'Get job'
+    },{
+      id : 3,
+      checked : true,
+      item : 'Read books'
+    }
+  ]);
   //useState(JSON.parse(localStorage.getItem("todo-list")));
   const [newItem, setNewItem] = useState('');
   const [search, setSearch] = useState('');
@@ -15,7 +30,7 @@ function App() {
   useEffect(() =>{
     setTimeout(() =>{
       setIsLoading(false);
-    },3000)
+    },2000)
   }, [])
 
 
@@ -99,3 +114,7 @@ export default App;
 //   checked : true,
 //   item : 'Get job'
 // }
+
+//"homepage": "https://syed90-boss.github.io/Todo_List_Reactjs",
+//"predeploy": "npm run build",
+//"deploy": "gh-pages -d build",
